@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html lang="Ru"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>DoTo с помощью CRUD</title> 
+    <link rel="stylesheet" href="index.css">
+    <!-- bootstrap CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <!-- CDN для "иконок" изменения, добавления и удаления-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+</head> 
+<body>
+    <div class="app_form">
+        <h1 class="head_1">ToDo List</h1>
+        <!-- Добавление строкового контейнера, складного элемента -->
+        <div id="add_new_task" data-bs-toggle="modal" data-bs-target="#form">
+          <!-- Строковый контейнер -->
+          <span>Добавить новый ToDo</span>
+          <!-- Знак "+" для добавления новых записей-->
+          <i class="fas fa-plus"></i>
+        </div>
+        <h3 class="text-center my-3">Задания:</h3>
+        <div id="tasks"></div>
+        <!-- Модальная форма для добавления записи. Скрытая, появляется при нажатии на "+" fas fa-plus-->
+        <form class="modal fade" id="form" tabindex="-1" aria-labelledby="ToDoModalForm" aria-hidden="true">
+            <!-- Построение модальной (диалоговой) формы с помощью bootstrap-->
+            <div class="modal-dialog">
+                <!-- Содержимое модальной формы -->
+                <div class="modal-content">
+                    <!-- Заголовой модальной формы -->
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="ToDoModalForm">Добавьте новое задание для ToDo</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <!-- Основная часть модальной формы: текст и поля -->
+                    <div class="modal-body">
+                        <!-- Заголовок задания для листа ToDo. Обязательное поле -->
+                        <p>Напишите заголовок:</p>
+                        <input type="text" class="form-control" name="" id="textInput" title="Обязательное поле"/>
+                        <div id="msg"></div>
+                        <br />
+
+                        <!-- Выбор даты для выполнения задания. Выбирается через календарь. Необязательное поле -->
+                        <p>Дата выполнения задания:</p>
+                        <input type="date" class="form-control" name="" id="dateInput" />
+                        <br />
+
+                        <!-- Выбор статуса задания: срочное или не срочное. Выпадающий список -->
+                        <p>Статус задания:</p>
+                        <select class="form-select" id="select">
+                            <option value="Срочное">Срочное</option>
+                            <option value="Не срочное">Не срочное</option>
+                        </select>
+
+                        <!-- Поле для описания задания. Необязательное поле (textarea) -->
+                        <p>Описание задания для списка ToDo:</p>
+                        <textarea name="" class="form-control" id="textarea" cols="30" rows="5"></textarea>
+                    </div>
+
+                    <!-- Кнопки модальной формы. Кнопка "Закрыть" закрывает форму.
+                    Кнопка "Добавить" добавляет новую запись, если нет нарушений заполнения -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                        <button type="submit" id="add" class="btn btn-primary">Добавить</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+<!-- Функции -->
+<script src="index.js"></script>
+
+<!-- bootstrap для модального окна-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> 
+</html>

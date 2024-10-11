@@ -1,0 +1,99 @@
+body {
+    background: url(back3.jpg);
+    margin: 0 60px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app_form {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    color: #080a31;
+    background-color: #bcf6f7;
+    width: 700px;
+    height: 700px;
+    border: 5px solid #5b116f;
+    border-radius: 6px;
+    padding: 20px;
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin:auto;
+}
+
+.head_1{
+    text-align: center;
+    font-size: 28px;
+    color: #7d0448;
+}
+
+#add_new_task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgb(244, 200, 200);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.fa-plus {
+    background-color: #ec46e4;
+    color: white;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.fa-edit{
+    color: rgb(243, 156, 75);
+}
+
+.fa-trash-alt{
+    color: #fe2a2a;
+}
+
+#msg{
+    color: #fe2a2a;
+}
+
+.modal-header{
+    color: white;
+    background-image: url(head.jpg);
+}
+
+.modal-body{
+    background-color: #ccf8f9;
+}
+
+.modal-footer{
+    background-image: url(footer.jpg);
+}
+
+#tasks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+  
+#tasks div {
+    border: 3px solid #8985f0;
+    background-color: #f7d8f3;
+    border-radius: 6px;
+    padding: 5px;
+    display: grid;
+    gap: 4px;
+}
+
+#tasks div .options {
+    justify-self: right;
+    display: flex;
+    gap: 20px;
+}
+  
+#tasks div .options i {
+    cursor: pointer;
+}
